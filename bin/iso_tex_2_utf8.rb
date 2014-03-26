@@ -11,7 +11,12 @@ end
 case ARGV.size
   when 1 then recode_file(ARGV[0], ARGV[0].sub(".tex","_utf_8.tex")  )
   when 2 then recode_file(ARGV[0], ARGV[1])
-  else puts "Usage: iso_tex_2_utf8 <INPUT_FILE> <OUTPUT_FILE> : Latin1 input file will be recoded and written to utf8 output file\niso_tex_2_utf8 <INPUT_FILE> : Latin1 input file will be recoded and written to utf8 output file, which will be named like the input file with _utf8 attached"
+  else puts 
+ <<-eos
+   Usage: 
+     iso_tex_2_utf8 <INPUT_FILE> <OUTPUT_FILE> : Latin1 input file will be recoded and written to utf8 output file
+     iso_tex_2_utf8 <INPUT_FILE> : Latin1 input file will be recoded and written to utf8 output file, which will be named like the input file with _utf8 attached"
+   eos
 end
 
 
