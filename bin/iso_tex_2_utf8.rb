@@ -4,7 +4,7 @@ require 'iso_tex_2_utf8_tex'
 
 def recode_file(in_file , out_file)
   transformer = IsoTex2Utf8Tex::Transformer.new
-  File.open(out_file, "w+", :encoding => 'utf-8' ).write( transformer.transcode(in_file) )
+  File.open(out_file, "w+", :encoding => 'utf-8' ).write( transformer.transcode_file(in_file) )
   puts "UTF-8 Encoded tex file written to #{out}"
 end
 
