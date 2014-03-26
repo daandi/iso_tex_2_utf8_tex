@@ -25,7 +25,14 @@ module IsoTex2Utf8Tex
     end
     
     def replace_tex_escapes(text)
-      LaTeX.decode(text)
+      lines = text.split("\n").collect do |line|
+        if line.start_with? "\\"
+          then line
+        else
+          LaTeX.decode(line)
+        end
+      end
+      lines.join("\n")
     end
   end
   
