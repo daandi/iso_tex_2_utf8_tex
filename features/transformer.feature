@@ -8,6 +8,11 @@ Feature: Transformer
 		|  \ss     | ß         |
 		|  {\ss}   | ß         |
 		|  {\"a}   | ä         |
+	  Then it leaves other charcers that might be escape sequences be :
+		|  given    | expected  |
+	    |  \o       | \o        |
+	    |  \{}      | \{}       |
+
 
 	Scenario: Replace latin1 specific package imports 
 		Given a transformer

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andreas Neumann"]
   spec.email         = ["andreas@neumann.biz"]
   spec.summary       = %q{This gem provides a command line tool to transform german latex files written in ISO-85589-1 to their equivalent utf-8 version}
-  spec.description   = %q{This gem provides a command line tool to transform german latex files written in ISO-85589-1 to their equivalent utf-8 version}
+  spec.description   = %q{This gem provides a command line tool to transform german latex files written in ISO-85589-1 to their equivalent utf-8 version. Doen't use latex decode in order to just replace some escapes not all.'}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
   
-  spec.add_dependency "latex-decode"
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "cucumber"

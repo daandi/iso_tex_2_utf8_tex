@@ -4,6 +4,17 @@ require 'latex/decode'
 module IsoTex2Utf8Tex
   
   class Transformer
+    
+    @@mapping = {
+      "\"A" => "Ä",
+      "\"O" => "Ö",
+      "\"U" => "Ü",
+      "\"a" => "ä",
+      "\"o" => "ö",
+      "\"u" => "ü",
+      "ss" => "ß"
+    }
+    
     def transcode_file(f)
       source_file = File.new(f,"r",:encoding => 'iso-8859-1')
       text = source_file.read()
@@ -25,14 +36,7 @@ module IsoTex2Utf8Tex
     end
     
     def replace_tex_escapes(text)
-      lines = text.split("\n").collect do |line|
-        if line.start_with? "\\"
-          then line
-        else
-          LaTeX.decode(line)
-        end
-      end
-      lines.join("\n")
+      text.gsub(/\{?\\(ss|"[AOUaou])\}?/ ) { |escape| @@mapping[$1] }
     end
   end
   
