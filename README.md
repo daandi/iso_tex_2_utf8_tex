@@ -33,3 +33,4 @@ iso_tex_2_utf8_tex
 
 Transforms german latex files encoded in Latin1 to equivalent version encoded in UTF-8. 
 
+![alt](https://www.codeship.io/projects/679960e0-98a0-0131-b321-220caf177ae3/status)
