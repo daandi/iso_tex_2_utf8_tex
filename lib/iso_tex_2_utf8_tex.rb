@@ -1,5 +1,4 @@
 require 'iso_tex_2_utf8_tex/version'
-require 'latex/decode'
 
 module IsoTex2Utf8Tex
   
